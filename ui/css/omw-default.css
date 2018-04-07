@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#cover{
+    width: 100%;
+    overflow-y: auto;
+    height: 100%;
+    position: fixed;
+    justify-content: center;
+    display: none;
+}
+
+.remodal {
+    cursor: default;
+    z-index: 4;
+    position: absolute;
+}
