@@ -79,7 +79,7 @@ function styleWindow() {
   console.log("showWindow end")
 }
 
-function closed() {
+function closed(event) {
   const video = document.getElementById("xst")
   if (event.target.id !== 'cover') return; //Срабатывает закрытие на cover и только.
 
