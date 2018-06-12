@@ -1,6 +1,6 @@
 const Default = {
   title: document.title,
-  clazz: null,
+  el: null,
 }
 
 function showWindow(defaultObjUser, objUser) {
@@ -9,7 +9,7 @@ function showWindow(defaultObjUser, objUser) {
   styleWindow()
 }
 
-const show = function (value) { //todo переменовать функцию
+const show = function (value) { //todo rename function
   const elem = setElements("olw")
   console.log(value)
   document.title = value.title
@@ -19,6 +19,7 @@ const show = function (value) { //todo переменовать функцию
   if (typeof value.content === 'string') {
     elem.classList.add("substrate");
     setElements("olw-content").innerHTML = value.content;
+    setTimeout(function(){ closed() }, 3000);
   }
 
   if (typeof value.parseIn === 'string') {
@@ -46,10 +47,10 @@ const createVideo = function (value) {
     videoObject.loop ? "loop" : "",
   ]
 
-  let strOrObj = typeof value.clazz === 'string' || typeof value.clazz === 'object';
+  let strOrObj = typeof value.el === 'string' || typeof value.el === 'object';
 
   if (typeof videoObject.id === 'string') attr.push(`id="${videoObject.id}"`)
-  if (strOrObj) attr.push(`class="${value.clazz}"`); //check on boolean
+  if (strOrObj) attr.push(`class="${value.el}"`); //check on boolean
   if (typeof videoObject.height === 'string') attr.push(`height="${videoObject.height}"`)
   if (typeof videoObject.width === 'string') attr.push(`width="${videoObject.width}"`)
   if (typeof videoObject.poster === 'string') attr.push(`poster="${videoObject.poster}"`)
@@ -70,8 +71,8 @@ function setElements(element) {
   if (element === "olw-content") return document.getElementById("olw-content")
 }
 
-// показать окно
-function styleWindow() {
+// show window
+function styleWindow(){
   let elCover = setElements('elCover');
   elCover.style.display = "flex"
   document.body.style.overflow = "hidden"
@@ -80,16 +81,13 @@ function styleWindow() {
 }
 
 function closed(event) {
-  const video = document.getElementById("xst")
-  if (event.target.id !== 'cover') return; //Срабатывает закрытие на cover и только.
+    const video = document.getElementById("xst")
+    if (video) video.pause();
 
-  setElements('olw').classList.remove("substrate");
-
-  if (video) video.pause();
-
-  console.log(typeof video)
-  document.title = Default.title
-  document.body.style.overflow = ""
-  setElements('elCover').style.display = "none"
-  setElements("olw-content").innerHTML = ""
+    if(!event || event.target.id === 'cover'){
+        document.title = Default.title
+        document.body.style.overflow = ""
+        setElements('elCover').style.display = "none"
+        setElements("olw-content").innerHTML = ""
+    } else return;
 }
