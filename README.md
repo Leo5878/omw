@@ -7,9 +7,19 @@
 
 ## HTML
 ```
-<script async src="./user.js"></script>
-<script async src="omw.js"></script>
-<script async src="./omw-ajax.js"></script>
+<head>
+  <script async src="./user.js"></script>
+  <script async src="omw.js"></script>
+  <script async src="./omw-ajax.js"></script>
+</head>
+
+<body>
+  <div id="cover" onclick="closed()">
+      <div id="olw" class="remodal">
+          <div id="olw-content"></div>
+      </div>
+  </div>
+ </body>
 ```
 
 Все скрипты могут грузиться асинхронно, так как на момент загрузки они не зависимы друг от друга и от HTML, что делает загрузку страницы быстрее и не останавливает рендеринг html.
@@ -119,4 +129,4 @@ let Default = {
   
 Внутри вызывается функция showWindow(). Аргуметом передаются объекты, которые нужно показать в этом окне.
   
-`onclick="closed()"` - функция для закрытия окна, может быть вызвана в любом месте.
+`onclick="closed(event)"` - функция для закрытия окна, может быть вызвана в любом месте. Event в качестве агрумента обязательно!
