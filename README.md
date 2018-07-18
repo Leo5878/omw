@@ -44,7 +44,7 @@ const example = {
 **Пример**
 ```
 const o2 = {
-  content: "<h1><center>Hello World</center></h1>",
+  echo: "<h1><center>Hello World</center></h1>",
   title: "Modal Window",
 }
 ```
