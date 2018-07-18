@@ -1,22 +1,16 @@
 /*Стили для user'a*/
 
 .substrate{
-    background-color: #fff;
     width: 1200px;
     margin: 50px 0;
 }
 
 #cover {
     z-index: 1;
-    cursor: pointer;
     background: rgba(0, 0, 0, 0.83);
 }
 
-#olw-content {
+.olw-style-content {
+    background-color: #fff;
     padding: 52px;
-}
-
-#olw{
-    width: 1200px;
-    margin: 30px 0;
 }

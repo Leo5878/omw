@@ -1,24 +1,25 @@
 let DefaultUser = {
   url: "default user url",
-}
+};
 
 let o1 = {
-  title: "Окно",
-  parseIn: "./content.html",
-}
+    title: "Окно",
+    parseIn: "/content.html",
+	el: "styleCombilyte",
+};
 
 let o2 = {
   url: "user o2",
-  content: "<h1><center>Hello World</center></h1>",
-  title: "Трындец",
-}
+  echo: "<h1><center>Hello World</center></h1>",
+  title: "Open window",
+};
 
 const userVideo = {
-  clazz: ['video leo juy'],
+  el: ['video leo juy'],
   video: {
     id: "",
-      url: "//www.w3schools.com/html/mov_bbb.mp4",
-      type: "mp4",
+	  url: "//www.w3schools.com/html/mov_bbb.mp4",
+    type: "mp4",
     autoPlay: false,
     controls: true,
     height: null,
@@ -28,7 +29,7 @@ const userVideo = {
     muted: false,
     preload: false,
   },
-}
+};
 
 const image = {
   img: true,
@@ -36,4 +37,4 @@ const image = {
   alt: "",
   width: "100%",
   height: "",
-}
+};

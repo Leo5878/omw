@@ -10,6 +10,7 @@ body{
     position: fixed;
     justify-content: center;
     display: none;
+    cursor: pointer;
 }
 
 .remodal {
