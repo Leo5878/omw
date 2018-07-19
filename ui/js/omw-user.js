@@ -1,7 +1,3 @@
-let DefaultUser = {
-	img: true,
-}
-
 let o1 = {
 	title: "Окно",
 	parseIn: "./content.html",
