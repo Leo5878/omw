@@ -9,7 +9,6 @@ let o1 = {
 }
 
 let o2 = {
-	url: "user o2",
 	echo: "<h1><center>Hello World</center></h1>",
 	title: "Open window",
 }
