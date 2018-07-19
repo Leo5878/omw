@@ -14,7 +14,7 @@ let o2 = {
 }
 
 const userVideo = {
-	el: ['video leo juy'],
+	el: ['video, control'],
 	video: {
 		id: "",
 		type: "mp4",
