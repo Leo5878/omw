@@ -31,6 +31,7 @@ const userVideo = {
 }
 
 const image = {
+	img: true,
 	url: "//sun1-3.userapi.com/c840629/v840629378/6edc5/SANLCQ6UDpA.jpg",
 	alt: "",
 	width: "100%",
