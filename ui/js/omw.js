@@ -21,25 +21,22 @@ function openOMW(defaultObjUser, objUser) {
 }
 
 function show(value) {
-	const elem = setElements("olw");
 	console.log(value);
 	document.title = value.title;
 	//if (typeof value.url === 'string') console.log(value.url);
 
 	if (typeof value.echo === 'string') {
-		elem.classList.add("substrate");
 		setElements("olw-content").innerHTML = value.echo;
 		createOrRemoveClassDOM('add', 'olw-content', "olw-style-content");
 	}
 
 	if (typeof value.parseIn === 'string') {
-		elem.classList.add("substrate");
 		pullServer(value.parseIn, setElements("olw-content"));
 		createOrRemoveClassDOM('add', 'olw-content', "olw-style-content");
 	}
 
 	if (typeof value.video === 'object') createElementHTML(createVideo(value), setElements("olw-content"));
-	if (value.img) createElementHTML(createImage(value), setElements("olw-content")); //check on boolean
+	if (typeof value.img === 'boolean') createElementHTML(createImage(value), setElements("olw-content")); //check on boolean
 }
 
 function createVideo(value) {
@@ -53,7 +50,7 @@ function createVideo(value) {
 		videoObject.loop ? "loop" : "",
 	];
 
-	let strOrObj = typeof value.el === 'string' || typeof value.el === 'object'; //check class for string or massiv
+	let strOrObj = typeof value.el === 'string' || typeof value.el === 'object'; //Checking the key "Class" for the type. Array or string
 
 	if (typeof videoObject.id === 'string') attr.push(`id="${videoObject.id}"`);
 	if (strOrObj) attr.push(`class="${value.el}"`); //check on boolean
@@ -104,9 +101,15 @@ function styleWindow() {
 	console.log("showWindow end")
 }
 
+onkeyup = function(evt){
+	if (evt.keyCode == 27){ //check event esc
+		closeOMW();
+	}
+}
+
 document.getElementById('cover').onclick = function (event) {
 	if (event.target.id === 'cover') closeOMW()
-};
+}
 
 function closeOMW() {
 	if (document.getElementById("xst")) video.pause();
