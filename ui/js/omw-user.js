@@ -1,3 +1,7 @@
+let DefaultUser = {
+  url: "default user url",
+}
+
 let o1 = {
 	title: "Окно",
 	parseIn: "./content.html",
